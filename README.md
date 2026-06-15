@@ -8,7 +8,7 @@ This document explains the **Strategy Pattern** and **Observer Pattern** using s
 
 ## Definition
 
-The Strategy Pattern defines a family of algorithms, encapsulates each one in a separate class, and makes them interchangeable at runtime.
+The Strategy Pattern defines a family of algorithms, encapsulates each one and ,make them interchangeable. Strategy lets the algorithm vary independently from client that use it.
 
 Instead of writing large `if-else` or `switch` statements to select behavior, the behavior is delegated to independent strategy classes.
 
