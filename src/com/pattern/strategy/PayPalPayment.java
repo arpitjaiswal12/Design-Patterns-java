@@ -1,5 +1,5 @@
 package com.pattern.strategy;
-
+// Concrete strategy
 public class PayPalPayment implements PaymentStrategy {
     @Override
     public void pay(int amount) {
