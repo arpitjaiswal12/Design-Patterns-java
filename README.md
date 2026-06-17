@@ -124,3 +124,126 @@ Selected payment logic executes
 
 <img width="623" height="487" alt="image" src="https://github.com/user-attachments/assets/d5a0acce-d8ad-4fa0-8269-ca308a252cb3" />
 
+---
+
+# 2. Observer Design Pattern
+
+## Definition
+
+**The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.**
+
+---
+
+## Problem It Solves
+
+Consider a weather monitoring system.
+
+The weather station tracks:
+
+- Temperature
+- Humidity
+- Pressure
+
+Several devices need live updates:
+
+- Mobile App
+- Smart Watch
+- LED Display
+- TV Screen
+
+Whenever the weather changes, every registered device should automatically receive the latest information.
+
+Without Observer Pattern, the weather station would need direct references to every display device, resulting in tight coupling.
+
+The Observer Pattern removes this dependency.
+
+---
+
+## Real-World Example
+
+### Weather Monitoring System
+
+A weather station publishes temperature updates.
+
+Multiple displays subscribe to these updates.
+
+When temperature changes:
+
+```text
+28°C → 32°C
+```
+
+Every registered display receives the update automatically.
+
+---
+
+## Components
+
+### Subject (Publisher)
+
+Maintains the list of observers.
+
+Responsible for:
+
+```text
+registerObserver()
+removeObserver()
+notifyObservers()
+```
+
+Example:
+
+```text
+WeatherStation
+```
+
+---
+
+### Observer
+
+Defines a common update interface.
+
+Example:
+
+```text
+DisplayDevice
+```
+
+---
+
+### Concrete Observers
+
+Implement the observer interface.
+
+Examples:
+
+```text
+MobileDisplay
+SmartWatch
+LEDDisplay
+```
+
+Each device decides how to display the updated weather information.
+
+---
+
+## Flow
+
+```text
+Devices register with WeatherStation
+                ↓
+WeatherStation stores observers
+                ↓
+Temperature changes
+                ↓
+notifyObservers()
+                ↓
+update() called on each observer
+                ↓
+All displays refresh automatically
+```
+## Class Diagram
+
+<img width="748" height="602" alt="image" src="https://github.com/user-attachments/assets/c9c128f1-59f5-409d-b45d-521297209d58" />
+
+---
